@@ -11,5 +11,6 @@ public class Ex06Constance {
         System.out.println("MY_NUMBER 의 현재 값");
         System.out.println(MY_NUMBER);
 
+//        MY_NUMBER = 30; 상수이므로 불가능
     }
 }
