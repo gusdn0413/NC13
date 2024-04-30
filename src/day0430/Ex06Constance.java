@@ -6,5 +6,10 @@ public class Ex06Constance {
     public static void main(String[] args) {
         // int 타입 상수 MY_NUMBER 선언
         final int MY_NUMBER;
+        MY_NUMBER = 20;
+
+        System.out.println("MY_NUMBER 의 현재 값");
+        System.out.println(MY_NUMBER);
+
     }
 }
