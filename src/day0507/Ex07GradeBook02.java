@@ -1,21 +1,10 @@
 package day0507;
-// 학생 5명의 번호, 이름, 국어, 영어, 수학 점수를 입력 받아서
-// 예쁘게 출력하는 프로그램을 작성하시오.
-// 단, 한번에 5명의 정보를 모두다 입력하는 것이 아니라
-// 메뉴를 만들어서
-// 입력 메뉴를 통해 들어갔을 때
-// 한명의 정보만 입력을 하되, 만약 5명의 정보를 모두다 입력했을 경우
-// 더이상 입력이 안되게 만드시고
-// 출력할 때에는 현재 입력된 학생들만 출력이 되게 만드시오.
-
 // 심화: 만약 5명을 모두다 입력했을 경우, 새로운 입력 시
 // 가장 먼저 입력된 정보를 없애고 현재 정보가 들어갈 수 있도록 코드를 작성하시오
 
-// 5시 10분까지
-
 import java.util.Scanner;
 
-public class Ex06GradeBook {
+public class Ex07GradeBook02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // 학생들의 정보를 저장할 배열들
@@ -62,8 +51,39 @@ public class Ex06GradeBook {
 
                     idx++;
                 } else {
-                    // 더이상 학생을 입력할 수 없음
-                    System.out.println("더이상 학생을 입력할 수 없습니다.");
+                    // 각 배열의 요소를 한칸식 땡긴다.
+                    for (int i = 1; i < idArray.length; i++) {
+                        idArray[i - 1] = idArray[i];
+                        nameArray[i - 1] = nameArray[i];
+                        koreanArray[i - 1] = koreanArray[i];
+                        englishArray[i - 1] = englishArray[i];
+                        mathArray[i - 1] = mathArray[i];
+                    }
+
+                    // 입력을 받는다.
+                    // 배열의 가장 마지막 인덱스
+                    int lastIndex = idArray.length - 1;
+
+                    // 1. 번호를 입력을 받는다.
+                    System.out.print("번호: ");
+                    idArray[lastIndex] = scanner.nextInt();
+
+                    // 2. 이름을 입력을 받는다.
+                    System.out.print("이름: ");
+                    scanner.nextLine();
+                    nameArray[lastIndex] = scanner.nextLine();
+
+                    // 3. 국어점수 입력을 받는다.
+                    System.out.print("국어: ");
+                    koreanArray[lastIndex] = scanner.nextInt();
+
+                    // 4. 영어점수 입력을 받는다.
+                    System.out.print("영어: ");
+                    englishArray[lastIndex] = scanner.nextInt();
+
+                    // 5. 수학점수 입력을 받는다.
+                    System.out.print("수학: ");
+                    mathArray[lastIndex] = scanner.nextInt();
                 }
 
             } else if (userChoice == 2) {
