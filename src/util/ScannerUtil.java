@@ -31,4 +31,28 @@ public class ScannerUtil {
 
         return temp;
     }
+
+    // Scanner 버그를 해결한 nextLine()
+    public static String nextLine(Scanner scanner, String message) {
+        printMessage(message);
+        String temp = scanner.nextLine();
+        if (temp.isEmpty()) {
+            temp = scanner.nextLine();
+        }
+
+        return temp;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
